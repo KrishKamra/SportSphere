@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SportSphere | Schedule</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>SportSphere</h1>
+    <p class="tagline">Upcoming fixtures and recent results.</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="schedule.html" class="active">Schedule</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Match Schedule</h2>
+        <p>
+            Use the filter to focus on matches involving your favorite team.
+        </p>
+        <label for="team-filter-select"><strong>Filter by team:</strong></label>
+        <select id="team-filter-select">
+            <option value="all">All teams</option>
+            <option value="City Tigers">City Tigers</option>
+            <option value="River Hawks">River Hawks</option>
+            <option value="Mountain Bears">Mountain Bears</option>
+            <option value="Coastal Sharks">Coastal Sharks</option>
+        </select>
+    </section>
+
+    <section class="table-section">
+        <table id="schedule-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Home</th>
+                    <th>Away</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-teams="City Tigers, River Hawks">
+                    <td>2026-03-01</td>
+                    <td>City Tigers</td>
+                    <td>River Hawks</td>
+                    <td>City Arena</td>
+                </tr>
+                <tr data-teams="Mountain Bears, Coastal Sharks">
+                    <td>2026-03-05</td>
+                    <td>Mountain Bears</td>
+                    <td>Coastal Sharks</td>
+                    <td>Summit Field</td>
+                </tr>
+                <tr data-teams="City Tigers, Mountain Bears">
+                    <td>2026-03-10</td>
+                    <td>City Tigers</td>
+                    <td>Mountain Bears</td>
+                    <td>City Arena</td>
+                </tr>
+                <tr data-teams="River Hawks, Coastal Sharks">
+                    <td>2026-03-15</td>
+                    <td>River Hawks</td>
+                    <td>Coastal Sharks</td>
+                    <td>River Dome</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 SportSphere. All rights reserved.</p>
+</footer>
+</body>
+</html>

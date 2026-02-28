@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SportSphere | Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>SportSphere</h1>
+    <p class="tagline">Your daily hub for all things sports.</p>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h2>Welcome to SportSphere</h2>
+        <p>
+            Follow your favorite teams, check upcoming fixtures, and never miss the action.
+        </p>
+        <button id="hero-cta-btn">Show Today’s Highlight</button>
+        <p id="hero-highlight" class="highlight-text hidden">
+            Today’s highlight: The Tigers face the Hawks at 7:30 PM!
+        </p>
+    </section>
+
+    <section class="cards">
+        <article class="card">
+            <h3>Top Stories</h3>
+            <ul>
+                <li>Tigers extend unbeaten run to 5 games.</li>
+                <li>Hawks announce new head coach.</li>
+                <li>City Stadium to host championship final.</li>
+            </ul>
+        </article>
+
+        <article class="card">
+            <h3>Featured Team</h3>
+            <p><strong>City Tigers</strong> – A fast-paced, attacking team known for their second-half comebacks.</p>
+            <button class="favorite-btn" data-team="City Tigers">
+                Mark City Tigers as Favorite
+            </button>
+        </article>
+
+        <article class="card">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="teams.html">Explore all teams</a></li>
+                <li><a href="schedule.html">View full schedule</a></li>
+                <li><a href="contact.html">Send us your feedback</a></li>
+            </ul>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 SportSphere. All rights reserved.</p>
+</footer>
+</body>
+</html>

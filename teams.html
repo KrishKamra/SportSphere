@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>SportSphere | Teams</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>SportSphere</h1>
+    <p class="tagline">Meet the teams that make the game.</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="teams.html" class="active">Teams</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Teams Overview</h2>
+        <p>
+            Pick a team to follow this season. Use the button below to highlight your favorite.
+        </p>
+        <button id="show-favorite-team-btn">Show Selected Favorite Team</button>
+        <p id="favorite-team-display" class="highlight-text hidden"></p>
+    </section>
+
+    <section class="cards team-grid">
+        <article class="card team-card">
+            <h3>City Tigers</h3>
+            <p>High press, quick passing, and relentless energy.</p>
+            <p><strong>Home Stadium:</strong> City Arena</p>
+            <button class="favorite-btn" data-team="City Tigers">
+                Set as Favorite
+            </button>
+        </article>
+
+        <article class="card team-card">
+            <h3>River Hawks</h3>
+            <p>Solid defense with lethal counter-attacks.</p>
+            <p><strong>Home Stadium:</strong> River Dome</p>
+            <button class="favorite-btn" data-team="River Hawks">
+                Set as Favorite
+            </button>
+        </article>
+
+        <article class="card team-card">
+            <h3>Mountain Bears</h3>
+            <p>Physically dominant team with strong aerial play.</p>
+            <p><strong>Home Stadium:</strong> Summit Field</p>
+            <button class="favorite-btn" data-team="Mountain Bears">
+                Set as Favorite
+            </button>
+        </article>
+
+        <article class="card team-card">
+            <h3>Coastal Sharks</h3>
+            <p>Creative playmakers and long-range shooting specialists.</p>
+            <p><strong>Home Stadium:</strong> Ocean Park</p>
+            <button class="favorite-btn" data-team="Coastal Sharks">
+                Set as Favorite
+            </button>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 SportSphere. All rights reserved.</p>
+</footer>
+</body>
+</html>
