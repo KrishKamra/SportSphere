@@ -1,66 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>SportSphere | Home</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportSphere - Premium Sports Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header>
-    <h1>SportSphere</h1>
-    <p class="tagline">Your daily hub for all things sports.</p>
-    <nav>
-        <a href="index.html" class="active">Home(Index)</a>
-        <a href="teams.html">Teams</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="contact.html">Contact</a>
+<body class="bg-gradient-to-br from-[#0b1020] via-[#0f1729] to-[#0b1020] text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-[#00a8cc] to-[#0088aa] rounded-lg flex items-center justify-center font-bold text-lg">S</div>
+                    <span class="text-xl font-bold hidden sm:inline">SportSphere</span>
+                </div>
+                <div class="hidden md:flex gap-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#teams" class="nav-link">Teams</a>
+                    <a href="#schedule" class="nav-link">Schedule</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-[#00a8cc] hover:text-[#ffdd57] transition">☰</button>
+                </div>
+            </div>
+        </div>
     </nav>
-</header>
 
-<main>
-    <section class="hero">
-        <h2>Welcome to SportSphere</h2>
-        <p>
-            Follow your favorite teams, check upcoming fixtures, and never miss the action.
-        </p>
-        <button id="hero-cta-btn">Show Today’s Highlight</button>
-        <p id="hero-highlight" class="highlight-text hidden">
-            Today’s highlight: The Tigers face the Hawks at 7:30 PM!
-        </p>
-    </section>
-
-    <section class="cards">
-        <article class="card">
-            <h3>Top Stories</h3>
-            <ul>
-                <li>Tigers extend unbeaten run to 5 games.</li>
-                <li>Hawks announce new head coach.</li>
-                <li>City Stadium to host championship final.</li>
-            </ul>
-        </article>
-
-        <article class="card">
-            <h3>Featured Team</h3>
-            <p><strong>City Tigers</strong> – A fast-paced, attacking team known for their second-half comebacks.</p>
-            <button class="favorite-btn" data-team="City Tigers">
-                Mark City Tigers as Favorite
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 pt-20">
+        <div class="glass-card max-w-2xl w-full">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl sm:text-5xl font-bold mb-4 text-balance">
+                    Welcome to <span class="text-gradient">SportSphere</span>
+                </h1>
+                <p class="text-gray-300 text-lg mb-8">Experience premium sports analytics with real-time data and insights</p>
+            </div>
+            
+            <button id="highlightBtn" class="w-full btn-primary mb-6 text-lg py-3">
+                Show Today's Highlight
             </button>
-        </article>
 
-        <article class="card">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="teams.html">Explore all teams</a></li>
-                <li><a href="schedule.html">View full schedule</a></li>
-                <li><a href="contact.html">Send us your feedback</a></li>
-            </ul>
-        </article>
+            <!-- Hidden Highlight Content -->
+            <div id="highlightContent" class="hidden glass-card-inner p-6 mb-6 border border-[#00a8cc]/30">
+                <h3 class="text-xl font-bold text-[#ffdd57] mb-3">🎯 Today's Highlight</h3>
+                <p class="text-gray-200 mb-3">City Tigers vs River Hawks - An intense match-up featuring top-tier performance analytics and real-time statistics tracking.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-[#00a8cc]/10 p-3 rounded-lg border border-[#00a8cc]/20">
+                        <div class="text-[#00a8cc] font-bold">City Tigers</div>
+                        <div class="text-2xl font-bold text-[#ffdd57]">3</div>
+                    </div>
+                    <div class="bg-[#00a8cc]/10 p-3 rounded-lg border border-[#00a8cc]/20">
+                        <div class="text-[#00a8cc] font-bold">River Hawks</div>
+                        <div class="text-2xl font-bold text-[#ffdd57]">2</div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-gray-400 text-sm">Scroll down to explore teams and schedules</p>
+        </div>
     </section>
-</main>
 
-<footer>
-    <p>&copy; 2026 SportSphere. All rights reserved.</p>
-</footer>
+    <!-- Teams Grid Section -->
+    <section id="teams" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center text-balance">
+                Featured <span class="text-gradient">Teams</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Team Card 1 -->
+                <div class="team-card glass-card h-full flex flex-col">
+                    <div class="flex-1">
+                        <div class="h-32 bg-gradient-to-br from-[#ff6b6b] to-[#cc5555] rounded-lg mb-4 flex items-center justify-center text-4xl">🐯</div>
+                        <h3 class="text-xl font-bold mb-2">City Tigers</h3>
+                        <div class="badge-power">Rank #1</div>
+                        <p class="text-gray-400 text-sm mt-3">Dominant force in the league with exceptional defensive play and offensive strategy.</p>
+                    </div>
+                    <button class="btn-favorite mt-auto w-full" data-team="City Tigers">
+                        <span class="favorite-icon">☆</span> Set as Favorite
+                    </button>
+                </div>
+
+                <!-- Team Card 2 -->
+                <div class="team-card glass-card h-full flex flex-col">
+                    <div class="flex-1">
+                        <div class="h-32 bg-gradient-to-br from-[#4ecdc4] to-[#3fa39c] rounded-lg mb-4 flex items-center justify-center text-4xl">🦅</div>
+                        <h3 class="text-xl font-bold mb-2">River Hawks</h3>
+                        <div class="badge-power">Rank #2</div>
+                        <p class="text-gray-400 text-sm mt-3">Swift and agile team known for rapid counter-attacks and precision passing.</p>
+                    </div>
+                    <button class="btn-favorite mt-auto w-full" data-team="River Hawks">
+                        <span class="favorite-icon">☆</span> Set as Favorite
+                    </button>
+                </div>
+
+                <!-- Team Card 3 -->
+                <div class="team-card glass-card h-full flex flex-col">
+                    <div class="flex-1">
+                        <div class="h-32 bg-gradient-to-br from-[#8b7355] to-[#6b5344] rounded-lg mb-4 flex items-center justify-center text-4xl">🐻</div>
+                        <h3 class="text-xl font-bold mb-2">Mountain Bears</h3>
+                        <div class="badge-power">Rank #3</div>
+                        <p class="text-gray-400 text-sm mt-3">Powerful team with strong defensive tactics and impressive stamina reserves.</p>
+                    </div>
+                    <button class="btn-favorite mt-auto w-full" data-team="Mountain Bears">
+                        <span class="favorite-icon">☆</span> Set as Favorite
+                    </button>
+                </div>
+
+                <!-- Team Card 4 -->
+                <div class="team-card glass-card h-full flex flex-col">
+                    <div class="flex-1">
+                        <div class="h-32 bg-gradient-to-br from-[#1e90ff] to-[#1670cc] rounded-lg mb-4 flex items-center justify-center text-4xl">🦈</div>
+                        <h3 class="text-xl font-bold mb-2">Coastal Sharks</h3>
+                        <div class="badge-power">Rank #4</div>
+                        <p class="text-gray-400 text-sm mt-3">Fluid and dynamic team excelling in creative plays and tactical flexibility.</p>
+                    </div>
+                    <button class="btn-favorite mt-auto w-full" data-team="Coastal Sharks">
+                        <span class="favorite-icon">☆</span> Set as Favorite
+                    </button>
+                </div>
+            </div>
+
+            <!-- Favorites Display -->
+            <div id="favoritesDisplay" class="hidden mt-12 glass-card p-6">
+                <h3 class="text-xl font-bold text-[#ffdd57] mb-3">⭐ Your Favorite Teams</h3>
+                <div id="favoritesList" class="flex flex-wrap gap-2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 px-4 bg-[#0a0f1a]/50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center text-balance">
+                Match <span class="text-gradient">Schedule</span>
+            </h2>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-3 justify-center mb-8">
+                <button class="schedule-filter active" data-filter="all">All Matches</button>
+                <button class="schedule-filter" data-filter="upcoming">Upcoming</button>
+                <button class="schedule-filter" data-filter="live">Live</button>
+                <button class="schedule-filter" data-filter="completed">Completed</button>
+            </div>
+
+            <!-- Schedule Cards -->
+            <div class="grid gap-4 max-w-3xl mx-auto">
+                <!-- Match Card 1 -->
+                <div class="schedule-card glass-card p-6 flex flex-col sm:flex-row items-center justify-between" data-status="upcoming">
+                    <div class="flex items-center gap-4 mb-4 sm:mb-0">
+                        <div class="text-3xl">🐯</div>
+                        <div>
+                            <div class="font-bold">City Tigers</div>
+                            <div class="text-sm text-gray-400">vs River Hawks</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-3xl">🦅</div>
+                        <div class="status-badge upcoming">Upcoming</div>
+                    </div>
+                </div>
+
+                <!-- Match Card 2 -->
+                <div class="schedule-card glass-card p-6 flex flex-col sm:flex-row items-center justify-between" data-status="live">
+                    <div class="flex items-center gap-4 mb-4 sm:mb-0">
+                        <div class="text-3xl">🐻</div>
+                        <div>
+                            <div class="font-bold">Mountain Bears</div>
+                            <div class="text-sm text-gray-400">vs Coastal Sharks</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-3xl">🦈</div>
+                        <div class="status-badge live">Live</div>
+                    </div>
+                </div>
+
+                <!-- Match Card 3 -->
+                <div class="schedule-card glass-card p-6 flex flex-col sm:flex-row items-center justify-between" data-status="completed">
+                    <div class="flex items-center gap-4 mb-4 sm:mb-0">
+                        <div class="text-3xl">🦅</div>
+                        <div>
+                            <div class="font-bold">River Hawks</div>
+                            <div class="text-sm text-gray-400">vs City Tigers</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-3xl">🐯</div>
+                        <div class="status-badge completed">Completed</div>
+                    </div>
+                </div>
+
+                <!-- Match Card 4 -->
+                <div class="schedule-card glass-card p-6 flex flex-col sm:flex-row items-center justify-between" data-status="upcoming">
+                    <div class="flex items-center gap-4 mb-4 sm:mb-0">
+                        <div class="text-3xl">🦈</div>
+                        <div>
+                            <div class="font-bold">Coastal Sharks</div>
+                            <div class="text-sm text-gray-400">vs Mountain Bears</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-3xl">🐻</div>
+                        <div class="status-badge upcoming">Upcoming</div>
+                    </div>
+                </div>
+
+                <!-- Match Card 5 -->
+                <div class="schedule-card glass-card p-6 flex flex-col sm:flex-row items-center justify-between" data-status="completed">
+                    <div class="flex items-center gap-4 mb-4 sm:mb-0">
+                        <div class="text-3xl">🐯</div>
+                        <div>
+                            <div class="font-bold">City Tigers</div>
+                            <div class="text-sm text-gray-400">vs Mountain Bears</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-3xl">🐻</div>
+                        <div class="status-badge completed">Completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center text-balance">
+                Get in <span class="text-gradient">Touch</span>
+            </h2>
+
+            <div class="glass-card p-8">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required
+                            placeholder="John Doe"
+                            class="w-full px-4 py-3 rounded-lg bg-[#ffffff]/5 border border-[#00a8cc]/30 text-white placeholder-gray-500 focus:border-[#00a8cc] focus:outline-none transition glass-input"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required
+                            placeholder="you@example.com"
+                            class="w-full px-4 py-3 rounded-lg bg-[#ffffff]/5 border border-[#00a8cc]/30 text-white placeholder-gray-500 focus:border-[#00a8cc] focus:outline-none transition glass-input"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            rows="5"
+                            required
+                            placeholder="Share your feedback or inquiries..."
+                            class="w-full px-4 py-3 rounded-lg bg-[#ffffff]/5 border border-[#00a8cc]/30 text-white placeholder-gray-500 focus:border-[#00a8cc] focus:outline-none transition glass-input resize-none"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary w-full text-lg py-3">
+                        Send Message
+                    </button>
+
+                    <div id="formMessage" class="hidden p-4 rounded-lg text-center font-medium"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-[#00a8cc]/10 py-8 px-4 mt-20">
+        <div class="max-w-7xl mx-auto text-center text-gray-400 text-sm">
+            <p>&copy; 2026 SportSphere. All rights reserved. Premium Sports Analytics Platform.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

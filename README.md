@@ -1,76 +1,55 @@
-# SportSphere – Simple Sports Website for Git/GitHub Training
+# SportSphere | Real-Time Sports Intelligence & Analytics Pipeline
 
-SportSphere is a very simple static web application designed for **hands-on Git and GitHub practice** with freshers.  
-It uses plain **HTML**, **CSS**, and a bit of **JavaScript**, and is intentionally small so that learners can safely experiment with:
-
-- Making and reviewing changes
-- Creating branches
-- Merging changes
-- Handling basic merge conflicts
-- Working with GitHub pull requests
+**SportSphere** is a premium analytics dashboard designed to bridge the gap between raw web data and actionable sports insights. The platform features an industry-grade "Glassmorphism" interface and is engineered to serve as the frontend for an automated web scraping pipeline targeting real-world professional sports organizations.
 
 ---
 
-## Project Structure
-```
+## 🏗 System Architecture: The Dashboard
+The current environment is built for high-performance data visualization:
+
+- **Styling Engine:** **Tailwind CSS** implementation for a scalable, utility-first design system.
+- **Visual Identity:** **Glassmorphism** aesthetic using `backdrop-filter: blur()`, glowing hover states, and a custom navy-cyan-gold color palette.
+- **Client-Side State:** **Vanilla JavaScript** logic for persistent data handling (via `localStorage`), allowing users to track specific real-world teams across sessions.
+- **Dynamic Components:**
+    - **Hero Analytics:** Instant toggles for "Insight of the Day" and match highlights.
+    - **Team Intelligence Grid:** Responsive cards featuring real-world Power Ranks and stadium metadata.
+    - **Smart Schedule:** A card-based fixture tracker with live status badges and multi-criteria filtering.
+
+---
+
+## 📂 Project Structure
+```text
 .
-├── index.html       # Home page
-├── teams.html       # Teams overview
-├── schedule.html    # Match schedule
-├── contact.html     # Feedback form
-├── styles.css       # Site styling
-├── script.js        # Simple interactive behaviours
-└── README.md        # This file
+├── index.html       # Dashboard Interface: Built for real-world data hydration
+├── style.css        # Global Design System: Tailwind extensions & Glassmorphism logic
+├── script.js        # Frontend Logic: State persistence & interactive behaviors
+└── README.md        # Technical documentation
 ```
-
-### Pages
-
-- **`index.html`**  
-  Landing page with a short description, top stories, and a “Today’s Highlight” button.
-
-- **`teams.html`**  
-  List of teams (City Tigers, River Hawks, Mountain Bears, Coastal Sharks) with “Set as Favorite” buttons.
-
-- **`schedule.html`**  
-  Simple table of fixtures with a dropdown to filter matches by team.
-
-- **`contact.html`**  
-  Basic feedback form (name, email, favorite team, message). Submitting shows a “thank you” message (no real backend).
 
 ---
 
-## Technologies Used
-
-- **HTML5** – static pages
-- **CSS3** – layout and styling
-- **Vanilla JavaScript** – small interactive features:
-  - Toggle today’s highlight
-  - Store favorite team in `localStorage`
-  - Filter schedule by team
-  - Show a fake success message on contact form submit
-
-No frameworks or build tools are used, so learners can focus on Git concepts.
+## 🏁 Getting Started
+1. **Clone the Environment:**
+   ```bash
+   git clone <repo-url>
+   cd sportsphere
+   ```
+2. **Launch the Dashboard:**
+   Simply open `index.html` in a modern browser. For a full production simulation, use a Python local server:
+   ```bash
+   python -m http.server 8000
+   ```
+   Navigate to `http://localhost:8000`.
 
 ---
 
-## Getting Started (For Learners)
+## 🚀 Future Prospect: Web Scraping Pipeline
+The next phase of development focuses on the **SportSphere Scraper**, a Python-based pipeline designed to automate data collection for specific teams:
 
-1. **Clone the repository**
-```
-git clone <repo-url>
-cd <repo-folder>
-```
+- **Automated Extraction:** Using **BeautifulSoup** and **Selenium** to crawl sites like FBref and NBA.com for live standings and performance metrics.
+- **Headline Aggregation:** Integration of a news crawler (e.g., Sky Sports RSS) to serve team-specific news directly to the user's dashboard.
+- **Data Hydration:** Transitioning from static HTML to dynamic JSON injection, allowing the dashboard to reflect real-world matches in real-time.
+- **Predictive Analytics:** Implementation of a **Linear Regression** model to calculate win probabilities based on the scraped historical data.
 
-2. **Open the site**
-
-   Since this is a static site, you can simply open `index.html` in a browser:
-
-   - Option 1: Double-click `index.html`
-   - Option 2: Open the <repo-folder> in VS Code and use an extension like Live Preview
-   - Option 3: Use a simple local server (recommended for demos), like the below. Then open http://localhost:8000 in your browser:
-
-    ```
-    # Example using Python 3
-    python -m http.server 8000
-    ```
-    
+---
+*© 2026 SportSphere. Transforming raw web data into professional sports intelligence.*
