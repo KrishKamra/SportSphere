@@ -1,0 +1,10 @@
+# Dependencies (screenshot tooling only)
+node_modules/
+package-lock.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
