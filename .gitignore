@@ -1,10 +1,11 @@
-# Dependencies (screenshot tooling only)
-node_modules/
-package-lock.json
-
-# OS / editor
+node_modules
+dist
+dist-ssr
+*.local
 .DS_Store
-Thumbs.db
 *.log
-.idea/
-.vscode/
+.env
+.env.*
+!.env.example
+playwright-report
+test-results

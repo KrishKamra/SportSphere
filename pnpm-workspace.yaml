@@ -1,0 +1,3 @@
+# Single-package app (pnpm 11+ build settings live here)
+allowBuilds:
+  esbuild: true

@@ -16,7 +16,8 @@ const page = await browser.newPage({
 });
 
 console.log('Navigating...');
-await page.goto('http://localhost:3456', {
+const baseUrl = process.env.SCREENSHOT_URL || 'http://localhost:5173';
+await page.goto(baseUrl, {
   waitUntil: 'networkidle',
   timeout: 90000,
 });
@@ -49,6 +50,12 @@ const sectionShots = [
   { id: 'pipeline', file: '05-pipeline.png' },
 ];
 
+// Hide sticky chrome for cleaner section crops in the README
+await page.evaluate(() => {
+  const header = document.querySelector('header');
+  if (header) header.style.visibility = 'hidden';
+});
+
 for (const s of sectionShots) {
   console.log('Capturing', s.id, '...');
   const el = page.locator('#' + s.id);
@@ -62,6 +69,11 @@ for (const s of sectionShots) {
   await page.waitForTimeout(350);
   await el.screenshot({ path: path.join(outDir, s.file) });
 }
+
+await page.evaluate(() => {
+  const header = document.querySelector('header');
+  if (header) header.style.visibility = '';
+});
 
 console.log('Capturing full page...');
 await page.evaluate(() => window.scrollTo(0, 0));

@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+@import './components.css';
+
+@theme {
+  --color-void: #05070f;
+  --color-abyss: #0a0e1a;
+  --color-panel: #0f1525;
+  --color-cyan: #00d4ff;
+  --color-cyan-dim: #00a8cc;
+  --color-cyan-glow: #67e8f9;
+  --color-gold: #ffc93c;
+  --color-gold-soft: #ffdd57;
+  --color-magenta: #ff2d95;
+  --color-lime: #39ff14;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.25);
+  --shadow-glow-gold: 0 0 40px rgba(255, 201, 60, 0.2);
+}
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
